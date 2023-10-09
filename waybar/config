@@ -1,0 +1,118 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "height": 20,
+    "modules-left": [
+        "custom/logo",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "memory",
+        "pulseaudio",
+        "battery",
+        "clock"
+    ],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-click-right": "fullscreen",
+        "icon-theme": "WhiteSur",
+        "icon-size": 18,
+        "tooltip-format": "{title}"
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "😀",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "😄",
+            "urgent": "🥵"
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/window":{
+        "format": "👉 {}",  
+    },
+    "memory": {
+        "interval": 5,
+        "format": "MEM {}%",
+        "format-alt": "-{avail}GiB",
+        "max-length": 10
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "format-alt": "{:%a, %d %b %Y}",
+        "format": "{:%H:%M}"
+    },
+    "pulseaudio": {
+        "format": "{icon}: {volume}%",
+        "format-bluetooth": "ᛒ: {volume}%",
+        "nospacing": 1,
+        "tooltip-format": "Volume : {volume}%",
+        "format-muted": "🔇",
+        "format-icons": {
+            "headphone": "🎧",
+            "default": ["🔈","🔉","🔊"]
+        },
+        "scroll-step": 1
+    },
+    "custom/logo": {
+        "format": " 🍥 ",
+        "tooltip": false,
+        "on-click": "wofi",
+        "on-click-right": ""
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "charging": [
+                "+0",
+                "+10",
+                "+20",
+                "+30",
+                "+40",
+                "+50",
+                "+60",
+                "+70",
+                "+80",
+                "+90"
+            ],
+            "default": [
+                "🔋"
+            ]
+        },
+        "format-full": "Charged 100%",
+        "format-alt":"~{H}:{M}",
+        "interval": 40,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "tooltip": false
+    }
+}
