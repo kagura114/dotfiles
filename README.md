@@ -5,6 +5,7 @@ This is the repo of kagrua's config files
 - hyprland config
 - waybar config + css
 - wofi config
+- helix config
 - some other stuff
 
 # Disclaimer
