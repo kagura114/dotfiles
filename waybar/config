@@ -17,14 +17,6 @@
         "battery",
         "clock"
     ],
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "on-click-right": "fullscreen",
-        "icon-theme": "WhiteSur",
-        "icon-size": 18,
-        "tooltip-format": "{title}"
-    },
     "hyprland/workspaces": {
         "on-click": "activate",
         "format": "{icon}",
@@ -39,7 +31,6 @@
             "7": "7",
             "8": "8",
             "9": "9",
-            "active": "😄",
             "urgent": "🥵"
         },
         "persistent_workspaces": {
@@ -52,8 +43,13 @@
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
-    "hyprland/window":{
-        "format": "👉 {}",  
+    "hyprland/window": {
+        "format": "{}",
+        "rewrite": {
+            "(.*) - Google Chrome": "🌎 $1",
+            "hx (.*)": "📝 $1"
+            
+        }  
     },
     "memory": {
         "interval": 5,
@@ -65,7 +61,7 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<tt>{calendar}</tt>",
+        "tooltip" : false,
         "format-alt": "{:%a, %d %b %Y}",
         "format": "{:%H:%M}"
     },
@@ -73,7 +69,7 @@
         "format": "{icon}: {volume}%",
         "format-bluetooth": "ᛒ: {volume}%",
         "nospacing": 1,
-        "tooltip-format": "Volume : {volume}%",
+        "tooltip": false,
         "format-muted": "🔇",
         "format-icons": {
             "headphone": "🎧",
