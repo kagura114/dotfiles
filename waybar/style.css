@@ -59,9 +59,7 @@ window#waybar.hidden {
 #memory,
 #custom-power,
 #battery,
-#backlight,
 #pulseaudio,
-#network,
 #clock,
 #tray {
   border-radius: 4px;
@@ -69,10 +67,6 @@ window#waybar.hidden {
   padding: 6px 12px;
   background-color: #1e1e2e;
   color: #181825;
-}
-
-#custom-power {
-  margin-right: 6px;
 }
 
 #custom-logo {
@@ -87,49 +81,24 @@ window#waybar.hidden {
 #memory {
   background-color: #6EF095;
 }
+
 #battery {
   background-color: #7AF0E0;
 }
-@keyframes blink {
-  to {
-    background-color: #f38ba8;
-    color: #181825;
-  }
+#battery.warning{
+  background-color: #E0DF00;
 }
-
-#battery.warning,
-#battery.critical,
-#battery.urgent {
-  background-color: #822201;
-  color: #181825;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#battery.critical{ 
+  background-color: #D50000;
 }
 #battery.charging {
-  background-color: #a6e3a1;
-}
-
-#backlight {
-  background-color: #fab387;
+  background-color: #36E056;
 }
 
 #pulseaudio {
   background-color: #86C6EF;
 }
 
-#network {
-  background-color: #94e2d5;
-  padding-right: 17px;
-}
-
 #clock {
   background-color: #a6c2f7;
 }
-
-#custom-power {
-  background-color: #f2cdcd;
-}
-
