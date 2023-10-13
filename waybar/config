@@ -69,8 +69,7 @@
     },
     "battery": {
         "format": "🔋{capacity}%",
-        "format-alt":"~{H}:{M}",
-        "interval": 40,
+        "interval" : 3,
         "states": {
             "warning": 30,
             "critical": 15
