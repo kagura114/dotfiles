@@ -16,9 +16,3 @@ select = "underline"
 [editor.soft-wrap]
 enable   = true
 max-wrap = 25
-
-
-[keys.normal]
-C-s = ":w"
-
-

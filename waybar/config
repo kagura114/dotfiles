@@ -19,36 +19,16 @@
     ],
     "hyprland/workspaces": {
         "on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "default": "😀",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "urgent": "🥵"
-        },
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-        },
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
+        "format": "{id}",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
     },
     "hyprland/window": {
         "format": "{}",
         "rewrite": {
             "(.*) - Google Chrome": "🌎 $1",
-            "hx (.*)": "📝 $1"
-            
+            "hx (.*)": "📝 $1",
+            "^$" : "Nothing..."
         }  
     },
     "memory": {
@@ -66,8 +46,8 @@
         "format": "{:%H:%M}"
     },
     "pulseaudio": {
-        "format": "{icon}: {volume}%",
-        "format-bluetooth": "ᛒ: {volume}%",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "ᛒ {volume}%",
         "nospacing": 1,
         "tooltip": false,
         "format-muted": "🔇",
@@ -75,34 +55,20 @@
             "headphone": "🎧",
             "default": ["🔈","🔉","🔊"]
         },
-        "scroll-step": 1
+        "scroll-step": 1,
+        "on-scrool-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scrool-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ true",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"  
     },
     "custom/logo": {
         "format": " 🍥 ",
         "tooltip": false,
         "on-click": "wofi",
-        "on-click-right": ""
+        "on-click-right": "google-chrome --new-window https://www.google.com/"
     },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": {
-            "charging": [
-                "+0",
-                "+10",
-                "+20",
-                "+30",
-                "+40",
-                "+50",
-                "+60",
-                "+70",
-                "+80",
-                "+90"
-            ],
-            "default": [
-                "🔋"
-            ]
-        },
-        "format-full": "Charged 100%",
+        "format": "🔋{capacity}%",
         "format-alt":"~{H}:{M}",
         "interval": 40,
         "states": {
