@@ -28,7 +28,8 @@
         "rewrite": {
             "(.*) - Google Chrome": "🌎 $1",
             "hx (.*)": "📝 $1",
-            "^$" : "Nothing..."
+            "^$" : "Nothing...",
+            "YouTube Music - (.*) - YouTube Music": "Playing: $1"
         }  
     },
     "memory": {
