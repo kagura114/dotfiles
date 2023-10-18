@@ -28,7 +28,9 @@
         "rewrite": {
             "(.*) - Google Chrome": "🌎 $1",
             "hx (.*)": "📝 $1",
-            "^$" : "Nothing..."
+            "^$" : "Nothing...",
+            "YouTube Music - (.*) - YouTube Music": "Playing: $1",
+            "^(.*) lxc-attach -n (.*)$": "LXC: $2"
         }  
     },
     "memory": {
@@ -69,8 +71,7 @@
     },
     "battery": {
         "format": "🔋{capacity}%",
-        "format-alt":"~{H}:{M}",
-        "interval": 40,
+        "interval" : 3,
         "states": {
             "warning": 30,
             "critical": 15
