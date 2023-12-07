@@ -30,7 +30,7 @@
             "hx (.*)": "📝 $1",
             "^$" : "Nothing...",
             "YouTube Music - (.*) - YouTube Music": "Playing: $1",
-            "^(.*) lxc-attach -n (.*)$": "LXC: $2"
+            "(.*) - Oracle VM VirtualBox": "VBox: $1"
         }  
     },
     "memory": {
@@ -71,7 +71,7 @@
     },
     "battery": {
         "format": "🔋{capacity}%",
-        "interval" : 3,
+        "interval" : 30,
         "states": {
             "warning": 30,
             "critical": 15
